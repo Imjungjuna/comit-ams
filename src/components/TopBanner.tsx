@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function TopBanner() {
   return (
-    <div className="fixed top-0 left-56 right-0 h-16 bg-white/80 backdrop-blur-sm border-b border-gray-200/80 flex items-center justify-between px-6 z-10">
+    <div className="fixed top-0 left-56 right-0 h-[68.5px] bg-white/80 backdrop-blur-sm border-b border-gray-200/80 flex items-center justify-between px-6 z-10">
       <div className="flex items-center gap-6">
         <div className="flex flex-col">
           <span className="text-lg font-medium text-gray-900">

@@ -20,7 +20,7 @@ export default function Sidebar() {
 
   return (
     <div className="fixed left-0 top-0 h-full w-56 bg-white border-r shadow-sm">
-      <div className="p-5 border-b">
+      <div className="px-6 py-5 border-b">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src={comitLogo}
