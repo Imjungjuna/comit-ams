@@ -10,14 +10,14 @@ export function middleware(request: NextRequest) {
   console.log('Current pathname:', pathname)
 
   // 보호할 경로들
-  const protectedRoutes = ['/my-page', '/my-activities', '/courses', '/facilities', '/books', '/notices']
-  // 로그인이 필요한 API 경로 (필요하다면)
-  // const protectedApiRoutes = ['/api/some-protected-route'];
+  // const protectedRoutes = ['/my-page', '/my-activities', '/courses', '/facilities', '/books', '/notices']
+  // // 로그인이 필요한 API 경로 (필요하다면)
+  // // const protectedApiRoutes = ['/api/some-protected-route'];
 
-  const isAccessingProtectedRoute = protectedRoutes.some((route) => pathname.startsWith(route))
+  // const isAccessingProtectedRoute = protectedRoutes.some((route) => pathname.startsWith(route))
   // const isAccessingProtectedApiRoute = protectedApiRoutes.some(route => pathname.startsWith(route));
 
-  if (isAccessingProtectedRoute) {
+  if (false) {
     if (!sessionToken && pathname !== '/') {
       // 로그인 페이지로 리다이렉트 (원래 요청했던 경로를 쿼리 파라미터로 전달 가능)
       const loginUrl = new URL('/login', request.url)
@@ -29,9 +29,9 @@ export function middleware(request: NextRequest) {
   }
 
   // 로그인한 사용자가 로그인 페이지나 회원가입 페이지에 접근하려고 하면 홈으로 리다이렉트
-  if (sessionToken && (pathname === '/login' || pathname === '/signup')) {
-    return NextResponse.redirect(new URL('/', request.url))
-  }
+  // if (sessionToken && (pathname === '/login' || pathname === '/signup')) {
+  //   return NextResponse.redirect(new URL('/', request.url))
+  // }
 
   return NextResponse.next()
 }
